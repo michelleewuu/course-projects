@@ -1,0 +1,10 @@
+# Test building a graph with data smallGraph.tsv
+
+# Load smallGraph.tsv
+LoadGraph smallGraph smallGraph.tsv
+
+# Check if graph is correctly built
+ListNodes smallGraph
+ListChildren smallGraph NodeA
+ListChildren smallGraph NodeB
+ListChildren smallGraph NodeC

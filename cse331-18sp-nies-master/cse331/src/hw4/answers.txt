@@ -1,0 +1,174 @@
+CSE 331 Homework 4.  Answers to Written questions.
+Edit this file to supply your answers.
+
+Name:  <replace this with your name>
+
+Problem 0.
+
+(a) r = p * q:
+    set r = 0 
+    foreach term, t_p in p:
+    	foreach term, t_q in q:
+    		set t_pq to be the multiplication of t_p and t_q
+    		if any term, t_r, in r has the same degree as t_pq
+    		then replace t_r by the sum of t_r and t_pq
+    		else insert t_pq to r as a new term
+
+(b) p = u / v:
+	set p = 0
+	while the term with highest degree in u, t_uh's degree is greater or equal to
+	the degree of the term with highest degree in v, t_vh
+		set t_devide to be t_uh/t_vh
+		insert t_devide to p
+		set k = 0
+		foreach term t_v in v
+			set t_vr to be the multiplication of t_devide and t_v
+			if any term in, t_k, in u has the same degree as t_vp
+			then replace t_k by the sum of t_k and t_vp
+			else insert t_vp to 
+		foreach term t_k in k
+			if any term t_u, in u has the same degree as t_k
+			then replace t_u by t_u-t_k
+			else insert -t_k to u
+
+(c) (x^3+x-1) / (x+1) = x^2-x+2: 
+    u = x^3+x-1
+	v = x+1
+	p = 0
+		Iteration 1: t_uh = x^3, t_vh = x
+			[while t_uh's degree is greater or equal to t_vh's degree]YES
+				t_devide = x^3/x = x^2
+				[insert t_devide to p]	p = x^2
+				k = 0
+				Iteration 1-1-1: t_v = x, t_vp = x*x^2 = x^3
+				[if any term in, t_k, in u has the same degree as t_vp]NO
+				[then replace t_k by the sum of t_k and t_vp]
+				[else insert t_vp to k]	k = x^3
+				Iteration 1-1-2: t_v = 1, t_vp = 1*x^2 = x^2
+				[if any term in, t_k, in u has the same degree as t_vp]NO
+				[then replace t_k by the sum of t_k and t_vp]
+				[else insert t_vp to k] k = x^3 + x^2
+				Iteration 1-2-1: t_k = x^3
+				[if any term t_u, in u has the same degree as t_k]YES
+				[then replace t_u by t_u-t_k] t_u-t_k = 0,so now u = x-1
+				[else insert -t_k to u]
+				Iteration 1-2-2: t_k = x^2
+				[if any term t_u, in u has the same degree as t_k]NO
+				[then replace t_u by t_u-t_k]
+				[else insert -t_k to u] u = -x^2+x-1
+		Iteration 2: t_uh = -x^2,  t_vh = x
+			[while t_uh's degree is greater or equal to t_vh's degree]YES
+				t_devide = -x^2/x = -x
+				[insert t_devide to r]	p = x^2-x
+				k = 0
+				Iteration 2-1-1: t_v = x, t_vp = x*-x = -x^2
+				[if any term in, t_k, in u has the same degree as t_vp]NO
+				[then replace t_k by the sum of t_k and t_vp]
+				[else insert t_qr to u]	k = -x^2
+				Iteration 2-1-2: t_v = 1, t_vp = 1*-x = -x
+				[if any term in, t_k, in u has the same degree as t_vp]NO
+				[then replace t_k by the sum of t_k and t_vp]
+				[else insert t_vp to k] k = -x^2-x
+				Iteration 2-2-1: t_k = -x^2
+				[if any term t_u, in u has the same degree as t_k]YES
+				[then replace t_u by t_u-t_k] t_u-t_k = 0,so now u = x-1
+				[else insert -t_k to u]
+				Iteration 2-2-2: t_k = -x
+				[if any term t_u, in u has the same degree as t_k]YES
+				[then replace t_u by t_u-t_k]  t_u-t_k = 2x, u = 2x-1
+				[else insert -t_k to u] 
+		 Iteration 3: t_uh = 2x,  t_vh = x
+			[while t_uh's degree is greater or equal to t_vh's degree]YES
+				t_devide = 2x/x = 2
+				[insert t_devide to r]	p = x^2-x+2
+				k = 0
+				Iteration 3-1-1: t_v = x, t_vp = x*2 = 2x
+				[if any term in, t_k, in u has the same degree as t_vp]NO
+				[then replace t_k by the sum of t_k and t_vp]
+				[else insert t_qr to u]	k = 2x
+				Iteration 3-1-2: t_v = 1, t_vp = 1*2 = 2
+				[if any term in, t_k, in u has the same degree as t_vp]NO
+				[then replace t_k by the sum of t_k and t_vp]
+				[else insert t_vp to k] k = 2x+2
+				Iteration 3-2-1: t_k = 2x
+				[if any term t_u, in u has the same degree as t_k]YES
+				[then replace t_u by t_u-t_k] t_u-t_k = 0,so now u = -1
+				[else insert -t_k to u]
+				Iteration 3-2-2: t_k = 2
+				[if any term t_u, in u has the same degree as t_k]YES
+				[then replace t_u by t_u-t_k] t_u-t_k = -3, u = -3
+				[else insert -t_k to u] 
+		Iteration 4: t_uh = -3,  t_vh = x
+				[while t_uh's degree is greater or equal to t_vh's degree]NO
+	We are done! p =  x^2-x+2 (with r = -3) 
+			
+Problem 1.
+
+(a) Methods or constructors need to be changed:
+    1.RatNum(int n, int d) needs to be changed. Delete the step of dividing 
+      both numer and denom by their greatest common denominator
+	2.checkRep() needs to change because rep inv changed. Delete parts other
+	  than assert (denom >= 0)
+    3.equals(java.lang.Object obj) needs to change.
+	  Change return (this.numer == rn.numer) && (this.denom == rn.denom) into
+	  return this.numer*rn.denom == this.denom*rn.numer
+	4.toString() needs to change. Before return numer + "/" + denom, add codes
+	  int g = gcd(numer, denom);
+	  numer = numer / g;
+	  denom = denom / g;	  
+	  to get the number to reduced form
+    5.Hashcode() when two RatNum are equal, the hashcode integer the methods 
+      return should be the same. Need to do 
+      int g = gcd(numer, denom);
+	  numer = numer / g;
+	  denom = denom / g;
+	  before return (this.numer*2) + (this.denom*3);
+
+(b) Notice that in the specifications of all these methods, there is no 
+    @modifies, which means no property of the object should be changed. But
+    if we assign new values to this.denom and this.numer, we actually modify
+    the property of RatNum which fails to follow the specification.
+
+(c) The rep inv requires denom >= 0. In RatNum(int n), the denom is set to 1
+    so the case of violating rep deosn't exist. In RatNum(int n, int d), if
+    d < 0, denom will be set to -d. So it will never be the case that denom
+    is negative. So we don't need to checkRep() at the beginning.
+
+
+Problem 2.
+
+(a) I add arg.checkRep() at the beginning of method add(RatTerm arg),
+    mul(RatTerm arg) and div(RatTerm arg). Since the contructor already 
+    includes checkRep() at the end, "this" is guaranteed to follow the rep
+    unless the method has @modifies specification. But for the parameters,
+    we don't know if it follows the rep or not, so I add checkRep() at the
+    start of every method which takes in a new RatNum as parameter.
+
+(b) Methods need to be changed
+    1. RatTerm(RatNum c, int e), delete the part which set expt to 0
+       it becomes less complex because we don't need to check coeff
+    2. String toString(), add a branch that check if the coeff is equal 
+       to RatNum.ZERO and return "0" if it is. It becomes more complex 
+       because we need more branch
+    3. boolean equals(Object obj), add a branch to check if the coeff of 
+       this and obj are both RatNum.ZERO or not. If both ZERO, return true.
+       It becomes more complex because we need to add branch
+    4. checkRep(), delete the part that asserts expt == 0 when coeff is ZERO
+       Less complex, because less to handle
+    5. RatTerm add(RatTerm arg), need to check one more condition if both the
+       coeff is ZERO or not, if both ZERO, return RatTerm.ZERO. More complex 
+       becuase there is one more branch.
+
+(c) Methods need to be changed
+    1. RatTerm(RatNum c, int e), need to set the expt to 0 in the branch 
+       which the coeff is equal to RatNum.ZERO
+    2. boolean equal(Object obj), don't need to check if both the coeff is NaN
+       before checking expt and coeff
+    3. checkRep(), need to add command to assert that when coedd is equal to Nan
+       expt must be 0.
+       
+    I prefer using only the coeff.isNaN() ==> expt = 0 set because it simplifies
+    the code a lot while the other set require us to add more commands
+
+Problem 5.
+10*x^5+8*x^4

@@ -1,0 +1,12 @@
+# Test find path on picking the minimum-cost path from two
+# available paths
+
+# Create a graph with two Nodes and two Edges with different cost between them
+CreateGraph simpleGraph
+AddNode simpleGraph node1
+AddNode simpleGraph node2
+AddEdge simpleGraph node1 node2 1
+AddEdge simpleGraph node1 node2 1.001
+
+# Find the minimum-cost path from node1 to node2
+FindPath simpleGraph node1 node2

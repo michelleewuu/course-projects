@@ -1,0 +1,10 @@
+# Tests find minimum-cost path on animal graph.
+
+# Load animal.tsv
+loaded graph animal
+
+# Test find minimum-cost path not shortest path
+path from Penguin to Monkey:
+Penguin to Otter with weight 0.333
+Otter to Monkey with weight 0.333
+total cost: 0.667

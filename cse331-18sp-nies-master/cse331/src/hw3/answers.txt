@@ -1,0 +1,30 @@
+6.
+a.Threw IllegalArgumentException for 0 but 0 is nonnegative. 
+  Change the (n <= 0) test after the if statement to (n < 0)
+
+b.The test program's sequence starts from index 0 rather than 1, 
+  so it should return 1 when i = 0,1 rather than 1,2. So we should 
+  change the else if (n <= 2) into else if (n <= 1). 
+
+c.Because the value return is not the actual value in the Fibonacci
+  sequence. Change the getFibTerm(n - 1) - getFibTerm(n - 2) into 
+  getFibTerm(n - 1) + getFibTerm(n - 2). 
+ 
+7.
+a.Change the volume = volume statement in the creator into 
+  this.volume = volume to avoid overrun. Change the return 0 
+  statement in the getVolume() method into return volume. 
+
+b.The second method of keeping track when adding and removing balls 
+  is better, it doesn't need calculation every time, only one time 
+  of for each loop when constructing the Ball Container. But to do this
+  a new private field of total volume need to be added to the class.
+
+c.One way is to sort the balls from small volume to large every time when
+  calling the getBallsFromSmallest method. The other way is keeping track
+  and sorting the volume of balls while adding and removing balls. If we 
+  call getBallsFromSmallest more, then it is better to sort every time when
+  a ball is added or remove. But if we call add or remove method more, it
+  will be higher efficiency to only sort when calling the 
+  getBallsFromSmallest method.
+   

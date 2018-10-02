@@ -1,0 +1,10 @@
+# Test building a graph with data animal.tsv
+
+# Load animal.tsv
+loaded graph animal
+
+# Check if graph is correctly built
+animal contains: Monkey Otter Penguin
+the children of Monkey in animal are: Otter(0.333) Penguin(1.000)
+the children of Otter in animal are: Monkey(0.333) Penguin(0.333)
+the children of Penguin in animal are: Monkey(1.000) Otter(0.333)

@@ -1,0 +1,12 @@
+# Test BFS on food graph
+
+# build the graph
+LoadGraph food food.tsv
+
+# test BFS order
+
+# find the shortest path FruitTart to CarrotCake
+FindPath food FruitTart CarrotCake
+
+# find the shortest path CarrotCake to FruitTart
+FindPath food CarrotCake FruitTart

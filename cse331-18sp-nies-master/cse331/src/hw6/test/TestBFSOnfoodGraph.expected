@@ -1,0 +1,16 @@
+# Test BFS on food graph
+
+# build the graph
+loaded graph food
+
+# test BFS order
+
+# find the shortest path FruitTart to CarrotCake
+path from FruitTart to CarrotCake:
+FruitTart to CheeseCake via Not Vegan Dessert
+CheeseCake to CarrotCake via American Dessert
+
+# find the shortest path CarrotCake to FruitTart
+path from CarrotCake to FruitTart:
+CarrotCake to CheeseCake via American Dessert
+CheeseCake to FruitTart via Not Vegan Dessert

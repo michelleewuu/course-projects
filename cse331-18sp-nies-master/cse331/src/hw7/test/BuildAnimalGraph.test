@@ -1,0 +1,10 @@
+# Test building a graph with data animal.tsv
+
+# Load animal.tsv
+LoadGraph animal animal.tsv
+
+# Check if graph is correctly built
+ListNodes animal
+ListChildren animal Monkey
+ListChildren animal Otter
+ListChildren animal Penguin

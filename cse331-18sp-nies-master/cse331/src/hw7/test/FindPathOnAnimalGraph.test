@@ -1,0 +1,7 @@
+# Tests find minimum-cost path on animal graph.
+
+# Load animal.tsv
+LoadGraph animal animal.tsv
+
+# Test find minimum-cost path not shortest path
+FindPath animal Penguin Monkey

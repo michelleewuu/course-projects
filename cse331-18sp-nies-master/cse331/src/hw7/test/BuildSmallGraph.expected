@@ -1,0 +1,10 @@
+# Test building a graph with data smallGraph.tsv
+
+# Load smallGraph.tsv
+loaded graph smallGraph
+
+# Check if graph is correctly built
+smallGraph contains: NodeA NodeB NodeC
+the children of NodeA in smallGraph are: NodeB(1.000)
+the children of NodeB in smallGraph are: NodeA(1.000)
+the children of NodeC in smallGraph are:

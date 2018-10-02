@@ -1,0 +1,14 @@
+# Test find path on picking the minimum-cost path from two
+# available paths
+
+# Create a graph with two Nodes and two Edges with different cost between them
+created graph simpleGraph
+added node node1 to simpleGraph 
+added node node2 to simpleGraph 
+added edge 1.000 from node1 to node2 in simpleGraph
+added edge 1.001 from node1 to node2 in simpleGraph
+
+# Find the minimum-cost path from node1 to node2
+path from node1 to node2:
+node1 to node2 with weight 1.000
+total cost: 1.000

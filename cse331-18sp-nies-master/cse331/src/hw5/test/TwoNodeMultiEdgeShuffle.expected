@@ -1,0 +1,22 @@
+# Same as TwoNodeMultiEdge.test but shuffles the order 
+# of adding edges
+
+# Create a graph
+created graph two_nodes_multi_edges_shuffle_graph
+
+# Add two nodes
+added node a to two_nodes_multi_edges_shuffle_graph
+added node b to two_nodes_multi_edges_shuffle_graph
+
+# Add five edges
+added edge AB1 from a to b in two_nodes_multi_edges_shuffle_graph
+added edge AA from a to a in two_nodes_multi_edges_shuffle_graph
+added edge AB2 from a to b in two_nodes_multi_edges_shuffle_graph
+added edge BB from b to b in two_nodes_multi_edges_shuffle_graph
+added edge BA from b to a in two_nodes_multi_edges_shuffle_graph
+
+# Print the nodes in the graph, the outgoing edges from a, 
+# and outgoing edges from b
+two_nodes_multi_edges_shuffle_graph contains: a b
+the children of a in two_nodes_multi_edges_shuffle_graph are: a(AA) b(AB1) b(AB2)
+the children of b in two_nodes_multi_edges_shuffle_graph are: a(BA) b(BB)

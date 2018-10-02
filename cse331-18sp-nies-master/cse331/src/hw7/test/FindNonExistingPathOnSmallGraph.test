@@ -1,0 +1,7 @@
+# Tests find path on smallGraph.
+
+# Load smallGraph.tsv
+LoadGraph smallGraph smallGraph.tsv
+
+# Find minimum-cost path from NodeA to NodeC
+FindPath smallGraph NodeA NodeC

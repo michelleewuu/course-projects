@@ -1,0 +1,16 @@
+# Same as TwoNodeNoEdge.test, but reverse the 
+# order of node adding to test if it prints 
+# out in alphabetical order
+
+# Create a graph
+CreateGraph two_nodes_graph_reverse
+
+# Add two nodes in reverse alphabetical order
+AddNode two_nodes_graph_reverse b
+AddNode two_nodes_graph_reverse a
+
+# Print the nodes in the graph, the outgoing edges from a, 
+# and outgoing edges from b
+ListNodes two_nodes_graph_reverse
+ListChildren two_nodes_graph_reverse a
+ListChildren two_nodes_graph_reverse b

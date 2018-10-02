@@ -1,0 +1,10 @@
+# Test the parser on food data to see if the graph is built correctly
+
+# Parse through the data and build the graph
+loaded graph food
+
+# List nodes and edges to see if the graph is built correctly
+food contains: CarrotCake CheeseCake FruitTart
+the children of CheeseCake in food are: CarrotCake(American Dessert) CarrotCake(Cake) FruitTart(Not Vegan Dessert)
+the children of CarrotCake in food are: CheeseCake(American Dessert) CheeseCake(Cake)
+the children of FruitTart in food are: CheeseCake(Not Vegan Dessert)

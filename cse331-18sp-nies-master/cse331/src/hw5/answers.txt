@@ -1,0 +1,96 @@
+CSE 331 Homework 5.  Answers to Written questions.
+Edit this file to supply your answers.
+
+Name:  Shi Ting Nie
+
+Problem 1. (Written exercises)
+
+(a)1.Rep invariant: 
+     	entries != null and entries has no nulls
+	 Abstraction function:
+		AF(this) = Queue<Integer> such that 
+           queue = entries = [] if no elements in entries
+           queue = entries = [a1, a2, ..., a_k] where k is the number of elements in entries
+     
+   2.Rep invariant:
+	 	entries != null, size >= 0, 
+		front >= 0 and front <= entries.length - 1
+	 Abstraction function:
+		AF(this) = Queue<Integer> such that 
+   	 	entries = [a1, a2, ..., ak], front = i, size = n
+    	queue = [] if size == 0
+    	queue = [a(i+1), ..., a(i+n)] if front+size <= entries.length
+    	queue = [a(i+1), ..., ak, a1, ..., a(n-k+i)] if front+size > entries.length
+  
+(b) queue_a = [1, 2]
+	queue_b = [2, 3, 4]
+	queue_c = [1, 2, 3]
+	queue_d = [1, 2]
+	queue_e = [1, 2, 3, 4]
+	queue_f = [1, 2, 3]
+	queue_g = [1, 2]
+	queue_h = [2, 3, 4]
+	c and f; a,d and g; b and h
+
+(c)1.public int solveEquations(int x, int y, int z)
+     Impossible, because the method only returns an integer of the result,
+     the client can't see how it is calculated by x,y,z and can't interact
+     with x,y,z
+     
+   2.public String[] decode(boolean slowly)
+     If the array of String returned is related to some pre-exist field rather
+     than a new array being construct inside the method, there is possibility of
+     rep exposure
+     
+   3.private Date myBirthday()
+     If Date is mutable and the returned Date is not the copy of the original 
+     Date, then this method contains representation exposure.
+     
+   4.public String toString()
+     Impossible because String is immutable.
+   
+   5.public Iterator<Integer> elements()
+     If Iterator references to mutable collections, then this method 
+     contains representation exposure.
+     
+   6.public Deck(List<Card> cards)
+     If we don't make copies of the data in the list we want to use 
+     to construct Deck there is possibility of rep exposure
+
+
+Problem 2.  (Graph interface/operations)
+		addNode and addEdge are needed in order for building the graph. 
+		Since there are add methods there must also be removeNode and removeEdge 
+		symmetrically. 
+		getData let client check the data stored in a certain Node.
+		containsNode are needed so that	the graph won't have duplicate nodes and the 
+		client can check if a certain node is in the Graph or not.
+		getNodes, getChildren, isEmpty and size are included since they allow client 
+		to get some information about the graph. 
+
+
+Problem 3.  (Testing strategy)
+		I used "0, 1, 2" case analysis mentioned in the hint. I have case of empty
+		graph, then I have graph with one node and no edge. Then graph with one node
+		and an edge pointing to itself. When it comes to the case of two nodes, there 
+		are a lot of combinations by adding different number and kinds of edges. For 
+		two nodes case, I test graph with no edge, with only one edge, with two edge
+		of inverse direction, with one normal edge and one self-pointing edge, with 
+		more than one edges per direction with different labels. Also I check cases
+		where nodes and edges are not add to the graph in alphabetical order because
+		the output requires to be printed out according to the alphabetical order of
+		node's data and edge's label.
+		 
+Problem 4.  (Representation)
+		The advantages of using collection of edges is O(1) time complexity when 
+		adding a new edge. The advantages of using an adjacency list is O(1) time 
+		complexity when adding a new node or adding a new edge. The advantages 
+		of using an adjacency matrix is O(1) time complexity when adding/removing 
+		edge or checking if the edge exists.
+		I used an ArrayList to represent each node's outgoing edges, and build in the
+		list as a field of Node, since ArrayList allows duplicates.
+		Then in the graph I used a HashSet to store all the Nodes since it doesn't allow
+		duplicates and by using the add method of the HasSet, I can skip the process to
+		check if the node is in the graph or not.
+		
+		

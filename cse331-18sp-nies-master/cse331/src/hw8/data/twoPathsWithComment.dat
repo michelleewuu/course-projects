@@ -1,0 +1,8 @@
+# paths from second dormitory
+3,4
+# to first dormitory
+	0,0: 5
+# paths from first dormitory
+0,0
+# to second dormitory
+	3,4: 5

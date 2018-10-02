@@ -1,0 +1,23 @@
+CSE 331 Homework 6.  Answers to Written questions.
+Edit this file to supply your answers.
+
+Name:  <Shi Ting Nie>
+
+Briefly describe any changes made to your Graph ADT from HW5 and why 
+those changes were made below.  (See the HW6 assignment for details.)
+
+1. I changed how a Node is connected to Edges starting from it,
+   I used a field in class Node to store all Edges starting from it before
+   But this is hard to access and make changes because the field storing
+   Edges is private in class Node. In my new LabeledMultiGraph, I use a Map
+   to store Nodes in the graph and their corresponding Edges with each Node 
+   as key of accessing Edges starting from it. Also, I delete the field storing
+   Edges in Node and all methods related to it in class Node.
+
+2. I changed the data structure of storing Edges related to a certain Node from
+   ArrayList to HashSet. Because HashSet is of O(1) when checking whether contains
+   a certain Edge or not, while ArrayList is of O(n), which is much slower. And 
+   checking whether an Edge is already in the graph happens a lot when building 
+   marvelGraph in class MarvelPath, so changing this data structure makes code run
+   much faster.
+   

@@ -1,0 +1,8 @@
+# Test building graph with only one Node.
+
+# Load oneNode.tsv
+loaded graph oneNodeGraph
+
+# Print the nodes in the graph and the edges starting from onlyNode
+oneNodeGraph contains: onlyNode
+the children of onlyNode in oneNodeGraph are:

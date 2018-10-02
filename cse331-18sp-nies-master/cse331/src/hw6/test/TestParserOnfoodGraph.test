@@ -1,0 +1,10 @@
+# Test the parser on food data to see if the graph is built correctly
+
+# Parse through the data and build the graph
+LoadGraph food food.tsv
+
+# List nodes and edges to see if the graph is built correctly
+ListNodes food
+ListChildren food CheeseCake
+ListChildren food CarrotCake
+ListChildren food FruitTart

@@ -1,0 +1,7 @@
+# Test building an empty graph.
+
+# Load empty.tsv
+LoadGraph emptyGraph empty.tsv
+
+# Print the nodes in the graph
+ListNodes emptyGraph

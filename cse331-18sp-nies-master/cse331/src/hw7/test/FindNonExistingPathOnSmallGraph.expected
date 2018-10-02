@@ -1,0 +1,8 @@
+# Tests find path on smallGraph.
+
+# Load smallGraph.tsv
+loaded graph smallGraph
+
+# Find minimum-cost path from NodeA to NodeC
+path from NodeA to NodeC:
+no path found
