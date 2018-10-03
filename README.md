@@ -1,2 +1,2 @@
 # CSE-331
-The project for CSE 331 given by University of Washington
+The folder contains the projects which were created during the course CSE 331 given by University of Washington.
