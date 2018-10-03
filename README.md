@@ -1,2 +1,2 @@
 # CSE-331
-The project from CSE 331 given by University of Washington
+The project for CSE 331 given by University of Washington
